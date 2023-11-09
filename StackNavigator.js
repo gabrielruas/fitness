@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -6,21 +6,26 @@ import HomeScreen from "./screens/HomeScreen";
 import WorkoutScreen from "./screens/WorkoutScreen";
 import FitScreen from "./screens/FitScreen";
 import RestScreen from "./screens/RestScreen";
-// import AdminManager from "./admin/AdrminManager"; 
+import AdminManager from "./admin/AdminManager";
+import AdminStudents from "./admin/AdminStudents";
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
 
   return (
+
+    <>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
         <Stack.Screen name="Workout" component={WorkoutScreen} options={{headerShown:false}}/>
         <Stack.Screen name="Fit" component={FitScreen} options={{headerShown:false}}/>
         <Stack.Screen name="Rest" component={RestScreen} options={{headerShown:false}}/>
-      {/* <Stack.Screen name="Admin" component={AdminManager} options={{headerShown:false}}/> */}
+        <Stack.Screen name="Images" component={AdminManager} options={{headerShown:false}}/>
+        <Stack.Screen name="Students" component={AdminStudents} options={{headerShown:true}}/>
       </Stack.Navigator>
     </NavigationContainer>
+    </>  
   );
 };
 
