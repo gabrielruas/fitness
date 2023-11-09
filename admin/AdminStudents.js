@@ -8,7 +8,7 @@ import {
   ScrollView,
   CheckBox,
 } from 'react-native';
-//import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function AdminStudents() {
   const [studentName, setStudentName] = useState('');
