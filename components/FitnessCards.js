@@ -21,7 +21,7 @@ const FitnessCards = () => {
       >
         <Image
           style={{ width: "95%", height: 140, borderRadius: 7 }}
-          source={{ uri: 'https://cdn-icons-png.flaticon.com/512/975/975660.png' }} 
+          source={{ uri: 'https://cdn-icons-png.flaticon.com/512/975/975660.png' }}
         />
         <Text
           style={{
@@ -42,19 +42,19 @@ const FitnessCards = () => {
           color="black"
         />
       </Pressable>
-    {FitnessData.map((item, key) => (
+
+      {/* Botão para acessar AdminStudents */}
       <Pressable
-      onPress={() => navigation.navigate("Workout",{
-        image:item.image,
-        excersises:item.excersises,
-        id:item.id,
-      })}
-        style={{ alignItems: "center", justifyContent: "center", margin: 10 }}
-        key={key}
+        onPress={() => navigation.navigate("Students")}
+        style={{
+          alignItems: "center",
+          justifyContent: "center",
+          margin: 10,
+        }}
       >
         <Image
           style={{ width: "95%", height: 140, borderRadius: 7 }}
-          source={{ uri: item.image }}
+          source={{ uri: 'URL_DA_SUA_IMAGEM' }} 
         />
         <Text
           style={{
@@ -66,20 +66,50 @@ const FitnessCards = () => {
             top: 20,
           }}
         >
-          {item.name}
+          Admin Students
         </Text>
         <MaterialCommunityIcons
-          style={{ position: "absolute", color: "white", bottom: 15,left:20 }}
+          style={{ position: "absolute", color: "white", bottom: 15, left: 20 }}
           name="lightning-bolt"
           size={24}
           color="black"
         />
       </Pressable>
-    ))}
- 
-      
 
-      
+      {FitnessData.map((item, key) => (
+        <Pressable
+          onPress={() => navigation.navigate("Workout",{
+            image:item.image,
+            excersises:item.excersises,
+            id:item.id,
+          })}
+          style={{ alignItems: "center", justifyContent: "center", margin: 10 }}
+          key={key}
+        >
+          <Image
+            style={{ width: "95%", height: 140, borderRadius: 7 }}
+            source={{ uri: item.image }}
+          />
+          <Text
+            style={{
+              position: "absolute",
+              color: "white",
+              fontSize: 16,
+              fontWeight: "bold",
+              left: 20,
+              top: 20,
+            }}
+          >
+            {item.name}
+          </Text>
+          <MaterialCommunityIcons
+            style={{ position: "absolute", color: "white", bottom: 15,left:20 }}
+            name="lightning-bolt"
+            size={24}
+            color="black"
+          />
+        </Pressable>
+      ))}
     </View>
   );
 };
